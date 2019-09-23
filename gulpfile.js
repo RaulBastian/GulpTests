@@ -1,14 +1,18 @@
+const { series } = require('gulp');
+var log = require('fancy-log');
 
-const{series} = require('gulp');
+function javascript(cb) {
+    log('From javascript task');
 
-function task1(cb){
-    console.log("Task1");
-    cb();
+  // body omitted
+  cb();
 }
 
-function task2(cb){
-    console.log("Task2");
-    cb();
+function css(cb) {
+    log('From css task');
+
+  // body omitted
+  cb();
 }
-  
-exports.default = series(task1,task2);
+
+exports.default = series(javascript, css);
